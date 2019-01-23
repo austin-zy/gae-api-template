@@ -1,0 +1,4 @@
+service: gae-your-service-name-here
+runtime: python37
+env_variables:
+  YOUR_TOKEN: ABCG

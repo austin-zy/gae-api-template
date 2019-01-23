@@ -1,0 +1,63 @@
+Entrypoint for processing data from dialogflow
+---
+consumes:
+  - application/json
+produces:
+  - application/json
+  - text/xml
+  - text/html
+parameters:
+  - name: body
+    in: body
+    required: true
+    description: Dialogflow Input
+    default: '{"queryResult":{
+                "queryText": "CSX 9/1/19 AK71",
+                "action": "submit_mc",
+                "parameters": {
+                  "code": "CSX",
+                  "date": "2019-01-09T12:00:00+08:00",
+                  "flight_number": "AK71"
+                },
+                "fulfillmentMessages": [
+                  {
+                    "text": {
+                      "text": [
+                        "[]"
+                      ]
+                    }
+                  }
+                ],
+                "outputContexts": [
+                  {
+                    "name": "generic",
+                    "lifespanCount": 4,
+                    "parameters": {
+                      "date": "2019-01-09T12:00:00+08:00",
+                      "code.original": "CSX",
+                      "code": "CSX",
+                      "flight_number": "AK71",
+                      "date.original": "9/1/19",
+                      "facebook_sender_id": "100014477446106",
+                      "flight_number.original": "AK71"
+                    }
+                  }
+                ],
+                "intent": {
+                  "id": "999b2d2b-e787-401e-995a-976497350792",
+                  "displayName": "submit_mc"
+                },
+                "languageCode": "en",
+                "sentimentAnalysisResult": {},
+                "id": "c995b16f-8e0d-4b54-862c-ff2144356624",
+                "sessionId": "632b6e09-dec3-475a-95ac-643a6fbb7168",
+                "timestamp": "2019-01-09T01:29:33.907Z",
+                "source": "agent",
+                "webhookStatus": {
+                  "webhookUsed": true
+                }
+               }
+              }'
+responses:
+  200:
+    description: Successful
